@@ -1,6 +1,5 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
-
 -- Abrir el panel de bases de datos
 vim.keymap.set("n", "<leader>du", ":DBUI<CR>", { desc = "Abrir DBUI" })
 
@@ -11,3 +10,29 @@ vim.g.db_ui_show_help = 0
 
 -- Guardar conexiones en este archivo
 vim.g.db_ui_save_location = "~/.config/nvim/db_ui"
+vim.g.python3_host_prog = "/opt/homebrew/anaconda3/bin/python"
+
+vim.g.dbs = {
+  -- ===============================
+  -- ░█▀▄░█▀█░█░░░█▀▀░█░█░█▀█░█░█
+  -- ░█▄▀░█▀█░█░░░█░░░░█░░█░█░█▀█
+  -- ===============================
+
+  -- Conexión general al servidor MySQL
+  mysql_root = "mysql://root:chandelier91@127.0.0.1:3306",
+
+  -- Bases de datos específicas
+  autos_mx = "mysql://root:chandelier91@127.0.0.1:3306/autos_mx?local_infile=1",
+  small_db = "mysql://root:chandelier91@127.0.0.1:3306/small_db_project?local_infile=1",
+  chinook_db = "mysql://root:chandelier91@127.0.0.1:3306/Chinook?local_infile=1",
+  ecommerce_db = "mysql://root:chandelier91@127.0.0.1:3306/ecommerce_db?local_infile=2",
+
+  -- ===============================
+  -- ░█▀░░█▀█░█░░░█▀▀░█▀▀░█▀█░█▀▄
+  -- ░█░░░█▀█░█░░░█▀▀░█▀▀░█░█░█▀▄
+  -- ░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀░▀
+  -- ===============================
+
+  -- SQL Server corriendo en Docker
+  sqlsrv_local = "sqlserver://sa:Thread4-Iphone-Sincerity-Seventeen@localhost:1433/master",
+}
